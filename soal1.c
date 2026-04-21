@@ -25,15 +25,15 @@ int main(void) {
         }
         else if(str[i] == '('){
             if(str[i+2] != ')'){
-                for(int j=0;j<(strlen(str)-i);j++){
-                    str[i] = str[i+1];
+                for(int j=i;j<strlen(str);j++){
+                    str[j] = str[j+1];
                 }
                 }
             }
         else if(str[i] == ')'){
             if(str[i-2] != '('){
-                for(int j=0;j<(strlen(str)-i);j++){
-                str[i] = str[i+1];
+                for(int j=i;j<strlen(str);j++){
+                    str[j] = str[j+1];
                 }
             }
         }
