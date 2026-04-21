@@ -12,31 +12,36 @@ Hapus seminimal mungkin karakter kurung dari string agar string menjadi valid.
  */
 
 
- #include <stdio.h>
- #include <string.h>
+#include <stdio.h>
+#include <string.h>
   
- int main(void) {
-    char str[100];
+int main(void) {
+    char str[20];
+    char* pstr = str;
     scanf("%s", str);
-    for(int i=0;i<=strlen(str);i++){
-        if(str[i] == "("){
-            if(str[i+2] != ")"){
-                free(str[i]);
-                for(int j=0;j<strlen(str)-i;j++){
-                    str[i] = str[i+1];
+    for(int i=0;i<strlen(str);i++){
+        if(str[i] == 0){
+            return 0;
+        }
+        else if(str[i] == '('){
+            if(str[i+2] != ')'){
+                for(int j=0;j<(strlen(str)-i);j++){
+                    pstr[i] = str[i+1];
                 }
                 }
             }
-            else if(str[i] == ")"){
-                if(str[i-2] != "("){
-                    free(str[i]);
-                    for(int j=0;j<strlen(str)-i;j++){
-                    str[i] = str[i+1];
+        else if(str[i] == ')'){
+            if(str[i-2] != '('){
+                for(int j=0;j<(strlen(str)-i);j++){
+                pstr[i] = str[i+1];
                 }
             }
         }
+        printf("%s",pstr[i]);
     }
 
     return 0;
- }
+}
+ 
+
  
