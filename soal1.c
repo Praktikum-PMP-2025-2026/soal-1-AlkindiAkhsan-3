@@ -26,20 +26,19 @@ int main(void) {
         else if(str[i] == '('){
             if(str[i+2] != ')'){
                 for(int j=0;j<(strlen(str)-i);j++){
-                    pstr[i] = str[i+1];
+                    str[i] = str[i+1];
                 }
                 }
             }
         else if(str[i] == ')'){
             if(str[i-2] != '('){
                 for(int j=0;j<(strlen(str)-i);j++){
-                pstr[i] = str[i+1];
+                str[i] = str[i+1];
                 }
             }
         }
-        printf("%s",pstr[i]);
     }
-
+    printf("%s",str);
     return 0;
 }
  
