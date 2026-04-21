@@ -28,8 +28,15 @@ int main(void) {
                 for(int j=i;j<strlen(str);j++){
                     str[j] = str[j+1];
                 }
+            }
+            else if(str[i+2] == '('){
+                if(str[i+4] != ')'){
+                    for(int j=i;j<strlen(str);j++){
+                        str[j] = str[j+1];
+                    }
                 }
             }
+        }
         else if(str[i] == ')'){
             if(str[i-2] != '('){
                 for(int j=i;j<strlen(str);j++){
@@ -37,10 +44,14 @@ int main(void) {
                 }
             }
         }
+            else if(str[i-2] == ')'){
+                if(str[i-4] != '('){
+                    for(int j=i;j<strlen(str);j++){
+                        str[j] = str[j+1];
+                    }
+                }
+            }
     }
     printf("%s",str);
     return 0;
 }
- 
-
- 
