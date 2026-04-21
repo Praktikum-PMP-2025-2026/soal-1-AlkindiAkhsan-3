@@ -18,7 +18,7 @@ Hapus seminimal mungkin karakter kurung dari string agar string menjadi valid.
 int main(void) {
     char str[20];
     char* pstr = str;
-    scanf("%s", str);
+    gets(str);
     for(int i=0;i<strlen(str);i++){
         if(str[i] == 0){
             return 0;
